@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="min-h-[85vh] flex items-center justify-center">
+
+<div class="card bg-base-100 shadow-2xl w-full max-w-2xl">
+
+<div class="card-body">
+
+<div class="text-center">
+
+<div class="text-6xl mb-3">
+🎓
+</div>
+
+<h1 class="text-4xl font-bold">
+Create Account
+</h1>
+
+<p class="text-gray-500">
+Join College Hub today
+</p>
+
+</div>
+
+<form method="POST" class="grid md:grid-cols-2 gap-4 mt-6">
+
+{% csrf_token %}
+
+<div>
+<label class="label">Username</label>
+{{ form.username }}
+</div>
+
+<div>
+<label class="label">Full Name</label>
+{{ form.full_name }}
+</div>
+
+<div class="md:col-span-2">
+<label class="label">Email</label>
+{{ form.email }}
+</div>
+
+<div>
+<label class="label">Branch</label>
+{{ form.branch }}
+</div>
+
+<div>
+<label class="label">Semester</label>
+{{ form.semester }}
+</div>
+
+<div class="md:col-span-2">
+<label class="label">Bio</label>
+{{ form.bio }}
+</div>
+
+<div>
+<label class="label">Password</label>
+{{ form.password1 }}
+</div>
+
+<div>
+<label class="label">Confirm Password</label>
+{{ form.password2 }}
+</div>
+
+{% if form.errors %}
+<div class="md:col-span-2 alert alert-error">
+{{ form.errors }}
+</div>
+{% endif %}
+
+<div class="md:col-span-2">
+
+<button
+type="submit"
+class="btn btn-primary w-full">
+
+Create Account
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

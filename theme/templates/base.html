@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
 
@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-slate-100 min-h-screen">
+<body class="bg-base-200 min-h-screen transition-all duration-300">
 
     {% include 'includes/navbar.html' %}
 
@@ -28,6 +28,65 @@
     </main>
 
     {% include 'includes/footer.html' %}
+<script>
 
+document.addEventListener('DOMContentLoaded', function(){
+
+    const themeToggle =
+    document.getElementById('theme-toggle');
+
+    if(localStorage.getItem('theme') === 'dark'){
+
+        document.documentElement.setAttribute(
+            'data-theme',
+            'dark'
+        );
+
+        themeToggle.innerHTML = '☀️';
+
+    }
+
+    themeToggle.addEventListener('click', function(){
+
+        const currentTheme =
+        document.documentElement.getAttribute(
+            'data-theme'
+        );
+
+        if(currentTheme === 'dark'){
+
+            document.documentElement.setAttribute(
+                'data-theme',
+                'light'
+            );
+
+            localStorage.setItem(
+                'theme',
+                'light'
+            );
+
+            this.innerHTML = '🌙';
+
+        } else {
+
+            document.documentElement.setAttribute(
+                'data-theme',
+                'dark'
+            );
+
+            localStorage.setItem(
+                'theme',
+                'dark'
+            );
+
+            this.innerHTML = '☀️';
+
+        }
+
+    });
+
+});
+
+</script>
 </body>
 </html>
