@@ -1,30 +1,331 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-{% block content %}
+<!-- ================= HERO SECTION ================= -->
 
-<div class="hero bg-base-100 rounded-2xl shadow-lg">
+<section
+  class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white shadow-2xl"
+>
+  <div class="absolute inset-0">
+    <div
+      class="absolute top-20 left-20 w-64 h-64 bg-white/20 rounded-full blur-3xl"
+    ></div>
 
-    <div class="hero-content text-center">
+    <div
+      class="absolute bottom-10 right-10 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl"
+    ></div>
+  </div>
 
-        <div>
+  <div class="hero min-h-[75vh] relative z-10">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="lg:w-1/2 flex justify-center">
+        <div class="relative">
+          <model-viewer class ="hero-model"
+src="{% static 'models/Evil-Book.glb' %}"
+auto-rotate
+camera-controls
+disable-zoom
+shadow-intensity="2"
+exposure="1.5"
+camera-orbit="0deg 75deg 105%"
+field-of-view="30deg"
+style="
+width:600px;
+height:600px;
+background:transparent;
+">
+</model-viewer>
 
-            <h1 class="text-5xl font-bold">
-                Welcome To College Hub
-            </h1>
+          <div
+    class="absolute top-10 right-0
+           bg-white text-black
+           px-5 py-3 rounded-2xl
+           shadow-2xl rotate-6">
 
-            <p class="py-6">
-                Upload Notes, PYQs, Important Questions
-                and help students learn better.
-            </p>
-
-            <button class="btn btn-primary">
-                Upload Resource
-            </button>
-
-        </div>
-
-    </div>
+    📚 1500+ Notes
 
 </div>
 
+          <div
+    class="absolute bottom-20 left-0
+           bg-white text-black
+           px-5 py-3 rounded-2xl
+           shadow-2xl -rotate-6">
+
+    📄 500+ PYQs
+
+</div>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2">
+        <div class="badge badge-lg bg-white text-indigo-600 border-none">
+          🚀 The Operating System For Students
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-6 leading-tight">
+          Learn.
+          <br />
+
+          Share.
+          <br />
+
+          Grow Together.
+        </h1>
+
+        <p class="py-6 text-lg md:text-xl opacity-90">
+          Search thousands of notes, PYQs and study resources shared by
+          students. Explore freely. Download after login.
+        </p>
+
+        <div class="flex gap-4 flex-wrap">
+          <a
+            class="btn btn-lg bg-white text-indigo-600 border-none hover:scale-105 transition"
+          >
+            Explore Resources
+          </a>
+
+          <a
+            class="btn btn-lg btn-outline text-white border-white hover:bg-white hover:text-indigo-600"
+          >
+            Upload Notes
+          </a>
+        </div>
+        <div class="join w-full max-w-xl mt-8">
+          <input
+            type="text"
+            placeholder="Search Notes, PYQs, Subjects..."
+            class="input input-bordered join-item w-full"
+          />
+
+          <button class="btn btn-primary join-item">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="mt-20">
+  <h2 class="text-4xl font-bold text-center mb-12">
+    Why Students Love College Hub
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-primary hover:-translate-y-2 transition-all duration-300"
+    >
+      <div class="card-body">
+        <div class="text-5xl">📚</div>
+
+        <h2 class="card-title">Notes</h2>
+
+        <p>Semester-wise notes available instantly.</p>
+      </div>
+    </div>
+
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-primary hover:-translate-y-2 transition-all duration-300"
+    >
+      <div class="card-body">
+        <div class="text-5xl">📄</div>
+
+        <h2 class="card-title">PYQs</h2>
+
+        <p>Access previous year question papers.</p>
+      </div>
+    </div>
+
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-primary hover:-translate-y-2 transition-all duration-300"
+    >
+      <div class="card-body">
+        <div class="text-5xl">🎯</div>
+
+        <h2 class="card-title">Exam Prep</h2>
+
+        <p>Important questions and study material.</p>
+      </div>
+    </div>
+
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-primary hover:-translate-y-2 transition-all duration-300"
+    >
+      <div class="card-body">
+        <div class="text-5xl">🤝</div>
+
+        <h2 class="card-title">Community</h2>
+
+        <p>Learn and collaborate with students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="mt-16">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <div
+      class="rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl border border-slate-700 p-8"
+    >
+      <div class="text-5xl mb-3">📚</div>
+
+      <h2 class="text-4xl font-bold text-primary">1500+</h2>
+
+      <p>Study Notes</p>
+    </div>
+
+    <div
+      class="rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl border border-slate-700 p-8"
+    >
+      <div class="text-5xl mb-3">📄</div>
+
+      <h2 class="text-4xl font-bold text-secondary">500+</h2>
+
+      <p>PYQs</p>
+    </div>
+
+    <div
+      class="rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl border border-slate-700 p-8"
+    >
+      <div class="text-5xl mb-3">🎯</div>
+      <h2 class="text-4xl font-bold text-accent">2000+</h2>
+
+      <p>Students</p>
+    </div>
+
+    <div
+      class="rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl border border-slate-700 p-8"
+    >
+      <div class="text-5xl mb-3">⬇️</div>
+
+      <h2 class="text-4xl font-bold text-success">10K+</h2>
+
+      <p>Downloads</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUBJECTS ================= -->
+
+<section class="mt-20">
+  <h2 class="text-4xl font-bold mb-8">Popular Subjects</h2>
+
+  <div class="flex flex-wrap gap-4">
+    <div class="badge badge-primary badge-lg p-5">Python</div>
+
+    <div class="badge badge-secondary badge-lg p-5">Java</div>
+
+    <div class="badge badge-accent badge-lg p-5">DBMS</div>
+
+    <div class="badge badge-info badge-lg p-5">Computer Networks</div>
+
+    <div class="badge badge-success badge-lg p-5">Operating System</div>
+
+    <div class="badge badge-warning badge-lg p-5">Data Structures</div>
+  </div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+
+<section class="mt-20">
+  <div class="flex justify-between items-center">
+    <h2 class="text-4xl font-bold">Trending Resources</h2>
+
+    <a class="link link-primary"> View All </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+    >
+      <div class="card-body">
+        <div
+          class="h-40 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600"
+        ></div>
+
+        <div class="badge badge-primary">Semester 6</div>
+
+        <h2 class="card-title">Python Complete Notes</h2>
+
+        <p>Complete Python Programming Notes.</p>
+
+        <div class="divider"></div>
+
+        <div class="flex justify-between">
+          <span>⬇ 120</span>
+
+          <span>👁 450</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+    >
+      <div class="card-body">
+        <div
+          class="h-40 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600"
+        ></div>
+
+        <div class="badge badge-secondary">Semester 5</div>
+
+        <h2 class="card-title">DBMS PYQ Collection</h2>
+
+        <p>Previous Year Questions Collection.</p>
+
+        <div class="divider"></div>
+
+        <div class="flex justify-between">
+          <span>⬇ 90</span>
+
+          <span>👁 300</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="card bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+    >
+      <div class="card-body">
+        <div
+          class="h-40 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600"
+        ></div>
+
+        <div class="badge badge-accent">Semester 5</div>
+
+        <h2 class="card-title">CN Important Questions</h2>
+
+        <p>Exam Preparation Material.</p>
+
+        <div class="divider"></div>
+
+        <div class="flex justify-between">
+          <span>⬇ 150</span>
+
+          <span>👁 500</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="mt-24 mb-10">
+  <div
+    class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 text-white text-center p-16 shadow-2xl"
+  >
+    <h2 class="text-5xl font-bold">Ready To Help Students Learn Better?</h2>
+
+    <p class="text-lg mt-5 opacity-90">
+      Upload your first resource and become a contributor.
+    </p>
+
+    <button class="btn btn-lg mt-8 bg-white text-indigo-600 border-none">
+      Upload Resource
+    </button>
+  </div>
+</section>
 {% endblock %}

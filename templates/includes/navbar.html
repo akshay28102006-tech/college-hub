@@ -1,66 +1,109 @@
-<nav class="navbar bg-base-100 shadow-md px-6">
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-slate-800">
+<div class="max-w-7xl mx-auto px-6">
 
-    <div class="flex-1">
+    <div class="navbar">
 
-        <a href="/"
-           class="text-2xl font-bold text-primary">
+        <div class="flex-1">
 
-            🎓 College Hub
+            <a href="/">
 
-        </a>
+<div class="flex items-center gap-3">
+
+    <div
+        class="w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 flex items-center justify-center text-black font-bold">
+
+        CH
+
+    </div>
+
+    <div>
+
+        <h1 class="font-bold text-white">
+
+            College Hub
+
+        </h1>
+
+        <p class="text-xs text-slate-400">
+
+            Student OS
+
+        </p>
 
     </div>
 
-    <div class="flex gap-2 items-center">
+</div>
 
-        <a href="/"
-           class="btn btn-ghost">
 
-           Home
+</a>
 
-        </a>
+        </div>
+        <input
+class="input input-bordered rounded-full w-80"
+placeholder="Search notes, PYQs..."
+>
 
-        {% if user.is_authenticated %}
+        <div class="hidden md:flex gap-2 items-center">
 
-            <span class="font-semibold">
-
-                {{ user.username }}
-
-            </span>
-
-            <a href="{% url 'logout' %}"
-               class="btn btn-error btn-sm">
-
-               Logout
-
+            <a href="/" class="btn btn-ghost">
+                Resources
             </a>
 
-        {% else %}
-
-            <a href="{% url 'login' %}"
-               class="btn btn-primary btn-sm">
-
-               Login
-
+            <a href="/" class="btn btn-ghost">
+                Subjects
             </a>
 
-            <a href="{% url 'register' %}"
-               class="btn btn-secondary btn-sm">
-
-               Register
-
+            <a href="/" class="btn btn-ghost">
+                Community
             </a>
 
-        {% endif %}
+        </div>
 
-        <button
-    id="theme-toggle"
-    class="btn btn-sm btn-outline">
+        <div class="flex gap-2 items-center">
 
-    🌙
+            {% if user.is_authenticated %}
 
-</button>
+                <div class="badge badge-primary">
+                    {{ user.username }}
+                </div>
+
+                <a href="{% url 'logout' %}"
+                   class="btn btn-error btn-sm">
+
+                    Logout
+
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}"
+                   class="btn btn-ghost btn-sm">
+
+                    Login
+
+                </a>
+
+                <a href="{% url 'register' %}"
+                   class="btn btn-sm bg-emerald-400 text-black border-none hover:bg-emerald-300">
+
+                    Get Started
+
+                </a>
+
+            {% endif %}
+
+            <button
+                id="theme-toggle"
+                class="btn btn-circle btn-outline">
+
+                🌙
+
+            </button>
+
+        </div>
 
     </div>
+
+</div>
 
 </nav>

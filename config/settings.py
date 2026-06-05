@@ -153,3 +153,17 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 STATICFILES_DIRS = [
     BASE_DIR / "theme/static",
 ]
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Static files
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
